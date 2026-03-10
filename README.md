@@ -55,6 +55,20 @@ curl -X 'POST' \
 
 ---
 
+## 🛠️ Troubleshooting
+
+### "Address already in use" (OSError 98)
+If you get a port conflict error and `fuser` is missing, use this command to clear the ports:
+```bash
+ps aux | grep -e vllm -e uvicorn | awk '{print $2}' | xargs kill -9 2>/dev/null
+```
+Then run `bash start.sh` again.
+
+### vLLM Startup Time
+The `dots.ocr` model is large. It may take 2-3 minutes to load into VRAM. If the API returns a connection error immediately, wait another minute and try again.
+
+---
+
 ## 📂 Project Structure
 - `api.py`: The FastAPI server.
 - `start.sh`: Manages both `vLLM` (on port 8001) and the `FastAPI Gateway` (on port 8000).
