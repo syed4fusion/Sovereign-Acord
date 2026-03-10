@@ -71,7 +71,7 @@ The `dots.ocr` model is large. It may take 2-3 minutes to load into VRAM. If the
 
 ## 📂 Project Structure
 - `api.py`: The FastAPI server.
-- `start.sh`: Manages both `vLLM` (on port 8001) and the `FastAPI Gateway` (on port 8000).
+- `start.sh`: Manages both `vLLM` (on port 8005) and the `FastAPI Gateway` (on port 8000).
 - `dots_extract.py`: Handles OCR chunks using the local vLLM instance.
 - `coords/`: Essential coordinate mapping JSONs for ACORD forms.
 - `requirements.txt`: Project dependencies.

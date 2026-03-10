@@ -3,11 +3,11 @@
 # Configuration
 MODEL="rednote-hilab/dots.ocr-1.5"
 API_PORT=${PORT:-8000}
-VLLM_PORT=8001
+VLLM_PORT=8005
 
 echo "--- Starting vLLM model server on port $VLLM_PORT ---"
 # Launch vLLM in the background. 
-# Using --port 8001 so it doesn't conflict with our FastAPI's 8000
+# Using --port 8005 so it doesn't conflict with our FastAPI's 8000
 # Adjust gpu-memory-utilization if needed, dots.ocr-1.5 fits in most 24GB+ GPUs
 python3 -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" \
