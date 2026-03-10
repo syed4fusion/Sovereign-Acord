@@ -40,7 +40,6 @@ venv.bak/
 
 # Project specific
 crops/
-coords/
 *.pdf
 *.log
 
