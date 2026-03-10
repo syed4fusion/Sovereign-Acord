@@ -37,14 +37,17 @@ bash start.sh
 Once you see **"vLLM is ready!"** in your terminal:
 
 ### 1. Interactive Docs (Swagger)
-Go to your RunPod dashboard, click **Connect**, and open the **HTTP Service (Port 8000)**. 
-Add `/docs` to the end of the URL:
+Go to your RunPod dashboard, find your running pod, and click **Connect**. 
+Click the **HTTP Service (Port 8000)** button. This will open your unique API URL, which looks like:
 `https://<pod-id>-8000.proxy.runpod.net/docs`
 
+*(The `pod-id` is the unique code for your instance, e.g., `abc123def456`)*
+
 ### 2. Using cURL
+Copy the base URL from the Step above and use it in your cURL command:
 ```bash
 curl -X 'POST' \
-  'https://<pod-id>-8000.proxy.runpod.net/extract' \
+  'https://YOUR-POD-ID-8000.proxy.runpod.net/extract' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
   -F 'file=@path/to/your/acord_form.pdf;type=application/pdf'
