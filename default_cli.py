@@ -2,8 +2,12 @@ from pathlib import Path
 import tempfile
 from typing import Any, Dict, List, Optional
 
-from .acord_extraction import run_segments_pipeline, SegmentSpec
-from .main import auto_detect_acord_spans, _resolve_coords_path, _validate_and_normalize_segments
+from acord_extraction import run_segments_pipeline, SegmentSpec
+from main import (
+    auto_detect_acord_spans,
+    _resolve_coords_path,
+    _validate_and_normalize_segments,
+)
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_COORDS_DIR = HERE / "coords"
