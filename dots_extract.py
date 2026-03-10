@@ -14,8 +14,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp"}
-# We are defaulting to the expected vLLM endpoint for the chosen Dots.ocr model
-DEFAULT_API_BASE = "http://localhost:8000/v1" 
+# Modified to default to port 8001 for internal vLLM on pod
+DEFAULT_API_BASE = "http://localhost:8001/v1" 
 DEFAULT_MODEL = "rednote-hilab/dots.ocr-1.5"
 INTER_REQUEST_SLEEP = 0.0  # bump if you hit rate limits
 
