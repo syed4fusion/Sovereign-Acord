@@ -27,7 +27,11 @@ import logging
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Dict, Any, Optional, TypedDict
+from typing import List, Dict, Any, Optional, Tuple, Set
+try:
+    from typing_extensions import TypedDict
+except ImportError:
+    from typing import TypedDict
 
 # pipeline entry points
 from acord_extraction import (
@@ -692,4 +696,3 @@ def _main_cli():
 
 if __name__ == "__main__":
     _main_cli()
-
