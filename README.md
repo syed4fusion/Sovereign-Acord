@@ -69,6 +69,35 @@ The `dots.ocr` model is large. It may take 2-3 minutes to load into VRAM. If the
 
 ---
 
+## ✅ How to Verify Success
+
+Once the server is running, you can verify it using one of the following methods:
+
+### 1. Interactive API Docs (Recommended)
+This is the easiest way to test visually:
+1. Go to your RunPod dashboard.
+2. Find your Pod and click **Connect**.
+3. Select **HTTP Service (Port 8000)**.
+4. Add `/docs` to the end of the URL in your browser (e.g., `https://<pod-id>-8000.proxy.runpod.net/docs`).
+5. Locate the **POST /extract** endpoint, click **Try it out**, upload an ACORD PDF, and click **Execute**.
+
+### 2. Using cURL
+Run this command from your terminal (replacing the URL and file path):
+```bash
+curl -X 'POST' \
+  'https://YOUR-POD-ID-8000.proxy.runpod.net/extract' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@/path/to/your/acord_form.pdf;type=application/pdf'
+```
+
+### 3. Monitoring Backend Logs
+While the extraction is running, watch your terminal logs. You should see entries like this confirming OCR activity:
+- `INFO: dots.extract - Dots.ocr extraction attempt ...`
+- `INFO: vllm - Processing request ...`
+
+---
+
 ## 📂 Project Structure
 - `api.py`: The FastAPI server.
 - `start.sh`: Manages both `vLLM` (on port 8005) and the `FastAPI Gateway` (on port 8000).
