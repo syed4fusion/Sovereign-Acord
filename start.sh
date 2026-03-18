@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-MODEL="rednote-hilab/dots.ocr-1.5"
+MODEL="rednote-hilab/dots.ocr"
 API_PORT=${PORT:-8000}
 VLLM_PORT=8005
 

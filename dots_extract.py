@@ -16,7 +16,7 @@ import requests
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp"}
 # Modified to default to port 8005 for internal vLLM on pod
 DEFAULT_API_BASE = "http://localhost:8005/v1" 
-DEFAULT_MODEL = "rednote-hilab/dots.ocr-1.5"
+DEFAULT_MODEL = "rednote-hilab/dots.ocr"
 INTER_REQUEST_SLEEP = 0.0  # bump if you hit rate limits
 
 FNAME_RE = re.compile(
